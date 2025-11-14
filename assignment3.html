@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My E-Commerce Portal</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            margin: 0;
+        }
+
+        
+        nav {
+            background-color: yellow;
+            padding: 15px;
+        }
+
+        nav a {
+            color: black;
+            margin: 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        
+        .product {
+            background: white;
+            padding: 15px;
+            width: 23%;
+            display: inline-block;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+        }
+
+        
+        form {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 95%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: yellow;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: yellow;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+
+    <script>
+    
+        function validateRegister() {
+            let name = document.getElementById("rname").value;
+            let email = document.getElementById("remail").value;
+            let pass = document.getElementById("rpass").value;
+
+            if (name == "" || email == "" || pass == "") {
+                alert("All fields are required!");
+                return false;
+            }
+            if (!email.includes("@")) {
+                alert("Enter a valid email!");
+                return false;
+            }
+            alert("Registration Successful!");
+            return true;
+        }
+
+        
+        function validateLogin() {
+            let email = document.getElementById("lemail").value;
+            let pass = document.getElementById("lpass").value;
+
+            if (email == "" || pass == "") {
+                alert("Please fill all fields!");
+                return false;
+            }
+            alert("Login Successful!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="#orders">Orders</a>
+        <a href="#wishlist">Wishlist</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#support">Customer Care</a>
+    </nav>
+
+    <div class="container">
+
+        
+        <h2 id="products" class="section-title">Product Items</h2>
+
+        <div class="product">
+            <h3>Samsung Phone</h3>
+            <p>Price: ₹15,000</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>Laptop</h3>
+            <p>Price: ₹45,000</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>Wireless Headphones</h3>
+            <p>Price: ₹2,500</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>Smart Watch</h3>
+            <p>Price: ₹1,999</p>
+            <button>Add to Cart</button>
+        </div>
+
+        
+        <h2 class="section-title">User Registration</h2>
+        <form onsubmit="return validateRegister()">
+            <label>Name:</label>
+            <input type="text" id="rname">
+
+            <label>Email:</label>
+            <input type="text" id="remail">
+
+            <label>Password:</label>
+            <input type="password" id="rpass">
+
+            <button type="submit">Register</button>
+        </form>
+
+        
+        <h2 class="section-title">Login</h2>
+        <form onsubmit="return validateLogin()">
+            <label>Email:</label>
+            <input type="text" id="lemail">
+
+            <label>Password:</label>
+            <input type="password" id="lpass">
+
+            <button type="submit">Login</button>
+        </form>
+
+        
+        <h2 id="orders" class="section-title">Your Orders</h2>
+        <ul>
+            <li>Order #1001 – Samsung Phone – Delivered</li>
+            <li>Order #1002 – Smart Watch – In Transit</li>
+        </ul>
+
+        
+        <h2 id="wishlist" class="section-title">Wishlist</h2>
+        <ul>
+            <li>Apple iPhone 15</li>
+            <li>Gaming Laptop</li>
+        </ul>
+
+        
+        <h2 id="reviews" class="section-title">Comments & Reviews</h2>
+        <ul>
+            <li>“Great website for shopping!” – Sana</li>
+            <li>“Products are affordable and delivered fast.” – Raj</li>
+        </ul>
+
+        
+        <h2 id="support" class="section-title">Customer Care</h2>
+        <p>Email: support@myecom.com</p>
+        <p>Phone: +91 98765 43210</p>
+
+        
+        <h2 id="contact" class="section-title">Contact Us</h2>
+        <p>Address: ABC Street, Chennai</p>
+
+        
+        <h2 id="about" class="section-title">About Us</h2>
+        <p>This portal is designed for online shopping with secure and fast delivery.</p>
+
+    </div>
+
+</body>
+</html>
